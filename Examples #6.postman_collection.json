@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "f2f2bb72-2e57-47da-9b58-36ec09a0f3ff",
+		"name": "Examples #6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15742786"
+	},
+	"item": [
+		{
+			"name": "Get Endpoints with IP and MAC address",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/node/class/fvCEp.json?rsp-subtree-class=fvIp&rsp-subtree=children",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"node",
+						"class",
+						"fvCEp.json"
+					],
+					"query": [
+						{
+							"key": "rsp-subtree-class",
+							"value": "fvIp"
+						},
+						{
+							"key": "rsp-subtree",
+							"value": "children"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
