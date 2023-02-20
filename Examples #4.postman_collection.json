@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "f531d73c-335a-4b44-ad89-a381badb569e",
+		"name": "Examples #4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15742786"
+	},
+	"item": [
+		{
+			"name": "Get Fault Summary",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/node/class/faultSummary.json",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"node",
+						"class",
+						"faultSummary.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Fault Summary- critical, major",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/node/class/faultSummary.json?query-target-filter=or(eq(faultSummary.severity,\"critical\"),eq(faultSummary.severity,\"major\"))&order-by=faultSummary.severity|desc",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"node",
+						"class",
+						"faultSummary.json"
+					],
+					"query": [
+						{
+							"key": "query-target-filter",
+							"value": "or(eq(faultSummary.severity,\"critical\"),eq(faultSummary.severity,\"major\"))"
+						},
+						{
+							"key": "order-by",
+							"value": "faultSummary.severity|desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get latest 10 Faults Records",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/node/class/faultRecord.json?page-size=10&page=0&order-by=faultRecord.created|desc",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"node",
+						"class",
+						"faultRecord.json"
+					],
+					"query": [
+						{
+							"key": "page-size",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "order-by",
+							"value": "faultRecord.created|desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Faults Records within 24 hours (supported APIC 5.2(3) over) Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/node/class/faultRecord.json?page-size=10&page=0&time-range=24h",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"node",
+						"class",
+						"faultRecord.json"
+					],
+					"query": [
+						{
+							"key": "page-size",
+							"value": "10"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "time-range",
+							"value": "24h"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a tenant health score",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo/uni/tn-Examples.json?rsp-subtree-include=health,required",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"uni",
+						"tn-Examples.json"
+					],
+					"query": [
+						{
+							"key": "rsp-subtree-include",
+							"value": "health,required"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tenant health scores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/class/fvTenant.json?rsp-subtree-include=health,required",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"class",
+						"fvTenant.json"
+					],
+					"query": [
+						{
+							"key": "rsp-subtree-include",
+							"value": "health,required"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all objects health score decreased",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/class/healthInst.json?query-target-filter=lt(healthInst.chng,\"0\")",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"class",
+						"healthInst.json"
+					],
+					"query": [
+						{
+							"key": "query-target-filter",
+							"value": "lt(healthInst.chng,\"0\")"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get physical interfaces not in \"up\" state",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/class/ethpmPhysIf.json?query-target-filter=ne(ethpmPhysIf.operSt, \"up\")",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"class",
+						"ethpmPhysIf.json"
+					],
+					"query": [
+						{
+							"key": "query-target-filter",
+							"value": "ne(ethpmPhysIf.operSt, \"up\")"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

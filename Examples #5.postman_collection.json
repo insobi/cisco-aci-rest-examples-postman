@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "bc2f328e-e4a3-45a9-90b1-33ad185b7d1f",
+		"name": "Examples #5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15742786"
+	},
+	"item": [
+		{
+			"name": "Delete a tenant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo/uni/tn-Examples.json",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"uni",
+						"tn-Examples.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

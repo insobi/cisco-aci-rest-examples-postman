@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "0afc7fdd-6284-4381-9067-a2b8d5d2e58f",
+		"name": "Example #2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15742786"
+	},
+	"item": [
+		{
+			"name": "Get a tenant",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo/uni/tn-Examples.json",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"uni",
+						"tn-Examples.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a tenant using query-target #1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo/uni/tn-Examples.json?query-target=children",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"uni",
+						"tn-Examples.json"
+					],
+					"query": [
+						{
+							"key": "query-target",
+							"value": "children"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a tenant using query-target #2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo/uni/tn-Examples.json?query-target=subtree",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"uni",
+						"tn-Examples.json"
+					],
+					"query": [
+						{
+							"key": "query-target",
+							"value": "subtree"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a tenant using query-target #3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo/uni/tn-Examples.json?query-target=subtree&target-subtree-class=fvTenant,fvCtx",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo",
+						"uni",
+						"tn-Examples.json"
+					],
+					"query": [
+						{
+							"key": "query-target",
+							"value": "subtree"
+						},
+						{
+							"key": "target-subtree-class",
+							"value": "fvTenant,fvCtx"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tenants",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/class/fvTenant.json",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"class",
+						"fvTenant.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tenants using query-target-filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/class/fvTenant.json?query-target-filter=ne(fvTenant.descr,\"\")",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"class",
+						"fvTenant.json"
+					],
+					"query": [
+						{
+							"key": "query-target-filter",
+							"value": "ne(fvTenant.descr,\"\")"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

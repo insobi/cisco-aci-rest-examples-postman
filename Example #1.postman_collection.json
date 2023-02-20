@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "efb1c772-6e23-4f7f-95d8-39419e60fd1b",
+		"name": "Example #1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15742786"
+	},
+	"item": [
+		{
+			"name": "Create Tenant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fvTenant\": {\n        \"attributes\": {\n            \"descr\": \"created by Postman\",\n            \"dn\":    \"uni/tn-Examples\",\n            \"name\":  \"Examples\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/node/mo.json",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"node",
+						"mo.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create VRF",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fvCtx\": {\n        \"attributes\": {\n            \"dn\": \"uni/tn-Examples/ctx-ExampleVRF\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo.json",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Bridge Domain",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fvBD\": {\n        \"attributes\": {\n            \"dn\": \"uni/tn-Examples/BD-ExampleBD\"\n        },\n        \"children\": [\n            {\n                \"fvSubnet\": {\n                    \"attributes\": {\n                        \"dn\": \"uni/tn-Examples/BD-ExampleBD/subnet-[192.168.10.1/24]\",\n                        \"ip\": \"192.168.10.1/24\"\n                    }\n                }\n            },\n            {\n                \"fvSubnet\": {\n                    \"attributes\": {\n                        \"dn\": \"uni/tn-Examples/BD-ExampleBD/subnet-[192.168.20.1/24]\",\n                        \"ip\": \"192.168.20.1/24\"\n                    }\n                }\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apic}}/api/mo.json",
+					"protocol": "https",
+					"host": [
+						"{{apic}}"
+					],
+					"path": [
+						"api",
+						"mo.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
